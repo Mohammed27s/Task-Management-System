@@ -1,0 +1,55 @@
+//Task Management System snippt 
+
+import java.util.Scanner;
+class HelloWorld {
+   
+//Use variables and appropriate data types to store task information.
+     public static String title;
+     public static String description;
+     public static String priority;
+     public static String dueDate;
+     
+     
+     public static void main(String[] args) {
+     System.out.println("*** Welcome to Task Managemnt System ***");
+     
+     System.out.println("\n");
+     
+      Scanner n = new Scanner(System.in);
+     
+     System.out.println("Enter all required inofrmation ");
+     
+         Adding();  //calling the Add function 
+         
+         
+     
+     
+    
+       
+    }
+    
+       //Addding function  
+
+    public static void Adding() {
+        
+     Scanner n = new Scanner(System.in);
+         
+     System.out.println("Add title : ");
+     title = n.nextLine();
+     
+     System.out.println("Description : ");
+     description = n.nextLine();
+     
+     System.out.println("Priority : ");
+     priority = n.nextLine();
+     
+     System.out.println("Due date : ");
+     dueDate = n.nextLine();
+     
+    }
+    
+    
+    
+
+    
+}
