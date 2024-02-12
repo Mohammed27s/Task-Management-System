@@ -1,7 +1,7 @@
-//Task Management System snippt 
+//Task Management System code snippt 
 
 import java.util.Scanner;
-class HelloWorld {
+class Tasks {
    
 //Use variables and appropriate data types to store task information.
      public static String title;
@@ -9,29 +9,34 @@ class HelloWorld {
      public static String priority;
      public static String dueDate;
      
-     
      public static void main(String[] args) {
-     System.out.println("*** Welcome to Task Managemnt System ***");
+         
+      System.out.println("*** Welcome to Task Management System ***" + "\n");
      
-     System.out.println("\n");
+
+      Scanner n = new Scanner(System.in); 
+      
+      System.out.println("-------------------------------------------");
+      System.out.println("Enter all required task inofrmation "+ "\n");
      
-      Scanner n = new Scanner(System.in);
-     
-     System.out.println("Enter all required inofrmation ");
-     
-         Adding();  //calling the Add function 
+         Adding();  //adding task information title, description, priority, and          due date
+         
+      System.out.println("-------------------------------------------");
+         
+      System.out.println("Your task management information :  "+"\n");
+      
+         View();    // Viewing task information title, description, priority,             and due date
          
          
-     
-     
-    
+         
+
        
     }
     
        //Addding function  
 
     public static void Adding() {
-        
+
      Scanner n = new Scanner(System.in);
          
      System.out.println("Add title : ");
@@ -48,6 +53,17 @@ class HelloWorld {
      
     }
     
+    public static void View() {
+        
+        String title_view = title;
+        String description_view = description;
+        String priority_view = priority;
+        String dueDate_view = dueDate;
+        
+        System.out.println("Title : "+title_view +"\n"+"Description : "+ description_view +"\n"+"Priority : "+priority_view +"\n"+"Due Date : "+ dueDate_view);
+        
+        
+    }
     
     
 
