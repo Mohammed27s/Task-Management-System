@@ -1,13 +1,29 @@
-//Task Management System code snippt 
+///Task Management System code snippt 
 
 import java.util.Scanner;
 class Tasks {
    
 //Use variables and appropriate data types to store task information.
+
+     //Add() variables
      public static String title;
      public static String description;
      public static String priority;
      public static String dueDate;
+     
+     //View() variables
+     public static String title_view;
+     public static String description_view;
+     public static String priority_view;
+     public static String  dueDate_view;
+     
+     //Complete() variables 
+     
+     public static String title_com;
+     public static String description_com;
+     public static String priority_com;
+     public static String  dueDate_com;
+     
      
      public static void main(String[] args) {
          
@@ -19,7 +35,7 @@ class Tasks {
       System.out.println("-------------------------------------------");
       System.out.println("Enter all required task inofrmation "+ "\n");
      
-         Adding();  //adding task information title, description, priority, and          due date
+         Add();  //adding task information title, description, priority, and          due date
          
       System.out.println("-------------------------------------------");
          
@@ -27,45 +43,66 @@ class Tasks {
       
          View();    // Viewing task information title, description, priority,             and due date
          
+       System.out.println("-------------------------------------------");
+       
+       System.out.println("The following task title : "+"\n");
+       
+         Complete();
+       
+       
+         
          
          
 
        
     }
     
-       //Addding function  
+       //Addding task 
 
-    public static void Adding() {
+    public static void Add() {
 
      Scanner n = new Scanner(System.in);
          
      System.out.println("Add title : ");
      title = n.nextLine();
      
-     System.out.println("Description : ");
+     System.out.println("Add Description : ");
      description = n.nextLine();
      
-     System.out.println("Priority : ");
+     System.out.println("Add Priority : ");
      priority = n.nextLine();
      
-     System.out.println("Due date : ");
+     System.out.println("Add Due date : ");
      dueDate = n.nextLine();
      
     }
     
+        //Viewing task 
+    
     public static void View() {
         
-        String title_view = title;
-        String description_view = description;
-        String priority_view = priority;
-        String dueDate_view = dueDate;
+        title_view = title;
+        description_view = description;
+        priority_view = priority;
+        dueDate_view = dueDate;
         
         System.out.println("Title : "+title_view +"\n"+"Description : "+ description_view +"\n"+"Priority : "+priority_view +"\n"+"Due Date : "+ dueDate_view);
         
         
     }
     
+        //task as completed.
     
-
+    public static void Complete(){
+        
+      title_com = title_view;
+      description_com = description_view; 
+      priority_com = priority_view;
+      dueDate_com =  dueDate_view;
+      
+      System.out.println(title_com +" is completed");
+      
+        
+    }
     
 }
