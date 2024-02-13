@@ -1,122 +1,178 @@
-///Task Management System code snippt 
 
 import java.util.Scanner;
-class Tasks {
-   
-//Use variables and appropriate data types to store task information.
+public class Task {
 
-     //Add() variables
-     public static String title;
-     public static String description;
-     public static String priority;
-     public static String dueDate;
-     
-     //View() variables
-     public static String title_view;
-     public static String description_view;
-     public static String priority_view;
-     public static String  dueDate_view;
-     
-     //Complete() variables 
-     public static String Ask_user;
-     public static String title_com;
-     public static String description_com;
-     public static String priority_com;
-     public static String  dueDate_com;
-     
-     
-     public static void main(String[] args) {
-         
-      System.out.println("*** Welcome to Task Management System ***" + "\n");
-     
 
-      Scanner n = new Scanner(System.in); 
-      
-      System.out.println("-------------------------------------------");
-      System.out.println("Enter all required task inofrmation "+ "\n");
-     
-         Add();  //adding task information title, description, priority, and          due date
-         
-      System.out.println("-------------------------------------------");
-         
-      System.out.println("Your task management information :  "+"\n");
-      
-         View();    // Viewing task information title, description, priority,             and due date
-         
-       System.out.println("-------------------------------------------");
-       
-       System.out.println("The following task title : "+"\n");
-       
-         Complete();
-       
-       
-         
-         
-         
+    public static Scanner n = new Scanner(System.in);
 
-       
+    public static String title;
+    public static String description;
+    public static String priority;
+    public static String dueDate;
+
+    //View() variables
+    public static String title_view;
+    public static String description_view;
+    public static String priority_view;
+    public static String  dueDate_view;
+
+    //Complete() variables
+    public static String Ask_user;
+    public static String title_com;
+    public static String description_com;
+    public static String priority_com;
+    public static String  dueDate_com;
+
+    //Remove() variables
+    public static String Remove_user;
+
+    //viewPriorityOrDueDate() variables
+    public static String priority_or;
+
+
+
+
+    public static void main(String[] args) {
+
+        System.out.println("*** Welcome to Task Management System ***" + "\n");
+
+
+
+        System.out.println("-------------------------------------------");
+        System.out.println("Enter all required task information "+ "\n");
+
+        add();  //adding task information title, description, priority and due date
+
+        System.out.println("-------------------------------------------");
+
+        System.out.println("Your task management information   "+"\n");
+
+        view();    // Viewing task information title, description, priority and due date
+
+        System.out.println("-------------------------------------------");
+
+        System.out.println("The following task title  "+"\n");
+
+        complete(); //Completing task information title, description, priority and due date
+
+        System.out.println("-------------------------------------------");
+
+        System.out.println("Deleting Tasks  "+"\n");
+        remove();
+
+        System.out.println("-------------------------------------------");
+
+        System.out.println("View your task by priority or due date "+"\n");
+        viewPriorityOrDueDate();
+
+        System.out.println("-------------------------------------------");
+
+
+
+
+
+
+
     }
-    
-       //Addding task 
 
-    public static void Add() {
+    //Addding task
 
-     Scanner n = new Scanner(System.in);
-         
-     System.out.println("Add title : ");
-     title = n.nextLine();
-     
-     System.out.println("Add Description : ");
-     description = n.nextLine();
-     
-     System.out.println("Add Priority : ");
-     priority = n.nextLine();
-     
-     System.out.println("Add Due date : ");
-     dueDate = n.nextLine();
-     
+    public static void add() {
+
+
+        System.out.println("Add title : ");
+        title = n.nextLine();
+
+        System.out.println("Add Description : ");
+        description = n.nextLine();
+
+        System.out.println("Add Priority : ");
+        priority = n.nextLine();
+
+        System.out.println("Add Due date (date format dd/mm/yyyy) : ");
+        dueDate = n.nextLine();
+
     }
-    
-        //Viewing task 
-    
-    public static void View() {
-        
+
+    //Viewing task
+
+    public static void view() {
+
         title_view = title;
         description_view = description;
         priority_view = priority;
         dueDate_view = dueDate;
-        
-        System.out.println("Title : "+title_view +"\n"+"Description : "+ description_view +"\n"+"Priority : "+priority_view +"\n"+"Due Date : "+ dueDate_view);
-        
-        
+
+        System.out.println("Title : "+title_view +"\n"+"Description : "+ description_view +"\n"
+                +"Priority (important or not important) : "+priority_view +"\n"+"Due Date : "+ dueDate_view);
+
+
     }
-    
-        //task as completed
-    
-    public static void Complete(){
-      Scanner n = new Scanner(System.in);
-      
-      title_com = title_view;
-      description_com = description_view; 
-      priority_com = priority_view;
-      dueDate_com =  dueDate_view;
-      
-      System.out.println("Did you complete the following task title : "+ title_com +"\n"+"answer with (yes or no) : ");
-          Ask_user = n.nextLine();
-      
-      if(Ask_user == "yes"){
-          
-          System.out.println(title_com +" is completed");
-      }
-      
-      else {
-           System.out.println(title_com +" is not completed");
-      }
-        
+
+    //task as completed
+
+    public static void complete(){
+
+        title_com = title_view;
+        description_com = description_view;
+        priority_com = priority_view;
+        dueDate_com =  dueDate_view;
+
+        System.out.println("Did you complete the following task title : "+ title_com +"\n"+"answer with (yes or no) : ");
+        Ask_user = n.nextLine();
+
+        if(Ask_user.equals("yes")){
+
+            System.out.println(title_com +" is completed.");
+        }
+        else if (Ask_user.equals("no")) {
+
+            System.out.println(title_com +" is not completed.");
+        }
+        else {
+            System.out.println("Only accepting (yes or no)");
+        }
+
+
     }
-    
-         
-    
-    
-    
+
+    //Task is removed
+      public static void remove(){
+       // Scanner n = new Scanner(System.in);
+
+        System.out.println("Do you want to remove the completed task title : "+title_com+"\n"+"Answer yes or no : ");
+        Remove_user = n.nextLine();
+
+        if(Remove_user.equals("yes")){
+
+            System.out.println("The task : "+ title_com +"has been removed. ");
+            title_com = null;;
+            description_com = null;;
+            priority_com = null;;
+            dueDate_com = null;;
+        } else if (Remove_user.equals("no")) {
+
+            System.out.println("Nothing removed or changed in the task. ");
+        }
+
+    }
+
+        public static void viewPriorityOrDueDate(){
+            priority_or = priority_com;
+
+            if (priority_or.equals("important")){
+
+                System.out.println("The task : "+"Title : "+title_com+"\n"+"Description : "+description_com+"\n"+
+                                "Due Date : "+dueDate_com+"\n"+"*** Is important ***");
+            }
+            else {
+
+               System.out.println("There is no important task ");
+            }
+
+        }
+
+
+
+
 }
