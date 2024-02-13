@@ -18,7 +18,7 @@ class Tasks {
      public static String  dueDate_view;
      
      //Complete() variables 
-     
+     public static String Ask_user;
      public static String title_com;
      public static String description_com;
      public static String priority_com;
@@ -91,18 +91,32 @@ class Tasks {
         
     }
     
-        //task as completed.
+        //task as completed
     
     public static void Complete(){
-        
+      Scanner n = new Scanner(System.in);
+      
       title_com = title_view;
       description_com = description_view; 
       priority_com = priority_view;
       dueDate_com =  dueDate_view;
       
-      System.out.println(title_com +" is completed");
+      System.out.println("Did you complete the following task title : "+ title_com +"\n"+"answer with (yes or no) : ");
+          Ask_user = n.nextLine();
       
+      if(Ask_user == "yes"){
+          
+          System.out.println(title_com +" is completed");
+      }
+      
+      else {
+           System.out.println(title_com +" is not completed");
+      }
         
     }
+    
+         
+    
+    
     
 }
